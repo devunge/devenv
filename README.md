@@ -1,24 +1,20 @@
 <div align="center">
 
 
-<img src="https://placehold.co/900x200/0f0f0f/ffffff?text=project-name&font=montserrat" alt="Project Banner" width="100%" />
+<img src="https://placehold.co/900x200/0f0f0f/ffffff?text=devENV&font=montserrat" alt="Project Banner" width="100%" />
 
 <br/>
-
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge)
-![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
-![Build](https://img.shields.io/badge/build-none-brightgreen?style=for-the-badge)
-![Coverage](https://img.shields.io/badge/coverage-00%25-brightgreen?style=for-the-badge)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-orange?style=for-the-badge)
 
 <br/>
 
 
-# project-name
 
-### *lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do*
-*lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.*
+# devENV
+
+### *my development environment settings*
+*Configuration files for my development environment on the Arch Linux system with i3wm as the Windows Manager.*
 
 <br/>
 
