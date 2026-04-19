@@ -18,8 +18,6 @@
 
 <br/>
 
-[**Live Demo**](https://fevunge.github.io/live-demo) &nbsp;·&nbsp;
-[**Documentation**](https://fevunge.github.io/repo-name-placeholder/) &nbsp;·&nbsp;
 [**Article**](https://github.com/fevunge/article-placeholder) &nbsp;·&nbsp;
 
 </div>
@@ -36,8 +34,6 @@
   - [Installation](#installation)
   - [Environment](#environment)
 - [Usage](#-usage)
-- [Project Structure](#-project-structure)
-- [API Reference](#-api-reference)
 - [Screenshots](#-screenshots)
 - [Roadmap](#-roadmap)
 - [Contributing](#-contributing)
@@ -68,7 +64,7 @@
 
 | Layer | Technology |
 |---|---|
-| **Frontend** | React 18, TypeScript, Tailwind CSS |
+| **Config** | Shell, Yaml, Text |
 | **Backend** | Node.js, Express, REST API |
 | **Database** | PostgreSQL, Prisma ORM |
 | **Auth** | JWT, OAuth 2.0 |
@@ -88,6 +84,9 @@ docker >= 24.0.0  # optional
 ```
 
 ### Installation
+
+
+
 
 **1. Clone the repository**
 
@@ -237,7 +236,9 @@ Full API reference available at [`/docs/api.md`](./docs/api.md)
 
 ## Roadmap
 
-- [x] Core feature implementation
+- [x] Install 
+  - [] git, curl, httpie, yay (with pacman)
+  - [] alacritty, tmux (with yay)
 - [x] REST API
 - [x] Authentication & authorization
 - [ ] Real-time notifications via WebSockets
