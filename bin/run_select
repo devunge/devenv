@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+ROFI_THEME="$HOME/.config/rofi/launcher.rasi"
+
+ROFI_OPTIONS=(
+  -dmenu
+  -i
+  -p "Select "
+  -markup-rows
+  -theme-str 'window {width: 600px;}'
+  -theme-str 'listview {lines: 5; scrollbar: true;}'
+  -theme-str 'element-text {horizontal-align: 0;}'
+)
+# Adiciona tema personalizado se existir
+if [[ -f "$ROFI_THEME" ]]; then
+  ROFI_OPTIONS+=(-theme "$ROFI_THEME")
+fi
+
+printf '%s\n' "$@" | rofi "${ROFI_OPTIONS[@]}"

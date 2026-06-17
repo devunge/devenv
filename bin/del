@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+for arg in $@; do
+  if [[ -z "$arg" ]]; then
+    gum log --level warn --structured "Usage: del <file|directory>"
+    exit 1
+  fi
+
+  if [[ ! -e "$arg" ]]; then
+    gum log --level error --structured "file does not exist." name "$arg"
+    exit 1
+  fi
+
+  if [[ "$arg" == "/" || "$arg" == "~" ]]; then
+    gum log --level error --structured "refusing to delete root or home directory." name "$arg"
+    exit 1
+  fi
+
+  if [[ "$arg" == "." || "$arg" == ".." ]]; then
+    gum log --level error --structured "refusing to delete current or parent directory." name "$arg"
+    exit 1
+  fi
+
+  if [[ ! -w "$arg" ]]; then
+    gum log --level error --structured "write permission denied." name "$arg"
+    exit 1
+  fi
+
+  size=$(du -sh "$arg" | cut -f1)
+  size_numeral=$(echo $size | awk -F',' '{ print $1 }')
+  if [[ -d "$arg" ]]; then
+    gum log --level info --structured "Do you realy want remove $arg?"
+    eza "$arg" --tree --level='1' --icons
+    gum confirm "remove $arg directory" && rm -r "$arg"
+    if [[ "$?" -eq 0 ]]; then
+      gum log --level info --structured "directory has been removed." name "$arg/" size "$size"
+    fi
+  else
+    if [[ $size_numeral -eq 0 ]]; then
+      gum log --level info --structured "removing $arg forever..." empty "true" size "$size"
+    else
+      gum log --level warn --structured "removing $arg forever..." empty "false" size "$size"
+      head "$arg" | mcat
+    fi
+    gum confirm "remove $arg archive" && rm "$arg"
+    if [[ "$?" -eq 0 ]]; then
+      gum log --level info --structured "archive has been removed." name "$arg/" size "$size"
+    fi
+  fi
+done

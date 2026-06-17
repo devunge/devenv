@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+TEXT=""
+
+for arg in "$@"; do
+  TEXT+=("$arg"$'\n')
+done
+
+FORMTED_TEXT="${TEXT[*]:2}"
+
+ROFI_THEME="$HOME/.config/rofi/launcher.rasi"
+
+ROFI_OPTIONS=(
+  -dmenu
+  -mesg $'\n<span font="14" weight="bold" foreground="#a6e3a1">'"$1"$'</span>\n'"$FORMTED_TEXT"$'\n'
+  -markup-rows
+  -theme-str 'window {width: 600px; location: north; anchor: north;}'
+  -theme-str 'listview {lines: -1; scrollbar: false;}'
+  -theme-str 'element-text {horizontal-align: 0;}'
+  -theme-str 'inputbar {enabled:false;} prompt {enabled:false;}'
+)
+
+if [[ -f "$ROFI_THEME" ]]; then
+  ROFI_OPTIONS+=(-theme "$ROFI_THEME")
+fi
+
+rofi "${ROFI_OPTIONS[@]}"

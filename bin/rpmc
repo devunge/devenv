@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+PROJECTS_DIR="$HOME/.projects"
+
+gum style --border normal --margin "1" --padding "0 1" --border-foreground 212 "Clone Project From $(gum style --foreground 212 'Github')."
+gum spin --spinner dot --title "Fetching GitHub Repositories..." -- gh auth status
+repo=$(gh repo list --limit 1000 --json nameWithOwner --template '{{range .}}{{.nameWithOwner}}{{"\n"}}{{end}}' | gum filter --placeholder "Repositories to clone" | awk -F'/' '{ print $2 }')
+gh repo clone "$repo" "$PROJECTS_DIR/$repo"
+if [[ "$?" -ne 0 ]]; then
+  notify-send -u "critical" "Project Manager" "Failed to clone repository."
+  exit 1
+else
+  notify-send "Project Manager" "Successfully cloned '$repo' to '$PROJECTS_DIR/$repo'."
+  exit 0
+fi

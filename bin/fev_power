@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+options="Lock\nSuspend\nReboot\nShutdown"
+chosen=$(echo -e "$options" | rofi -dmenu -p "Power")
+
+case $chosen in
+    *Lock) i3lock ;;
+    *Suspend) systemctl suspend ;;
+    *Reboot) systemctl reboot ;;
+    *Shutdown) systemctl poweroff ;;
+esac
