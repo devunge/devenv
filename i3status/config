@@ -1,0 +1,46 @@
+
+general {
+    colors = true
+    interval = 5
+    color_good = "#50FA7B"
+    color_bad = "#FF5555"
+    color_degraded = "#F1FA8C"
+}
+
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery all"
+order += "cpu_usage"
+order += "memory"
+order += "tztime local"
+
+wireless _first_ {
+    format_up = "📶 %essid %quality"
+    format_down = "📶 down"
+}
+
+ethernet _first_ {
+    format_up = "🌐 %ip"
+    format_down = "🌐 down"
+}
+
+battery all {
+    format = "%status %percentage %remaining"
+    status_chr = "⚡"
+    status_bat = "🔋"
+    status_full = "🔌"
+    low_threshold = 15
+}
+
+cpu_usage {
+    format = "💻 %usage"
+}
+
+memory {
+    format = "🧠 %used"
+    threshold_degraded = "10%"
+}
+
+tztime local {
+    format = "📅 %d/%m/%Y 🕐 %H:%M"
+}
