@@ -1,0 +1,17 @@
+api-documentation.md
+capacity-planning.md
+data-flow-lineage.md
+db-migration-plan.md
+db-schema-design.md
+desing.md
+engineering-budget.md
+infrastructure-architecture.md
+portmortem.md
+prd.md
+rfc.md
+security-review.md
+sprint.md
+tech-spec.md
+tutorial-how-to.md
+vendor-evaluation.md
+weekly-status-update.md

@@ -1,0 +1,17 @@
+{
+  "username": "fevunge",
+  "first_name": "Fernando",
+  "last_name": "Vunge",
+  "full_name": "Fernando Júlio Vunge",
+  "email": "fevunge@outlook.com",
+  "git": "https://github.com/fevunge",
+  "timezone": "Africa/Luanda",
+  "tech_stack": ["Typescript", "Go", "C"],
+  "about": [
+    "Hello everyone, Im Fernando Vunge, known online as fevunge! I'm a young developer from Luanda, Angola!",
+    "I started studying computer science studies in 2020, both academically and self-study.",
+    "I corruntly focused on programming and systems architecture.",
+    "In 2025, after finishing high school, I became a cadet at the 42 School! Since then, I've built several projects focused on computer science and problem-solving.",
+    "I have over a year of experience contributing to open-source projects, collaborating with three local startups, and working at medium-sized company where i develop solutions using microservices, system design, database architecture, APIs, and a lot of DevOps practices."
+  ]
+}
